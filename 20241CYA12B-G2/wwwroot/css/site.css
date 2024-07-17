@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.nav-link-custom {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+    padding: 20px;
+}
+.footer-custom {
+    padding-top: 15px;
+    background-color: #000000;
+    opacity: 0.8;
+}
+.footer-nav-link-custom {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.footer-copyright-custom {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight:400;
+    font-size: 10px;
+    color:#F7F0E5;
+}
+.hero-custom {
+    background-image: url('../images/bg_hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 380px;
+    padding: 6% 7% 0% 37%;
+}
+    .hero-custom p {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        font-size: 55px;
+        color: #FFFFFF;
+    }
+        .hero-custom p span {
+            font-weight: 700;
+            color: #F26569;
+        }
+
+.call-To-Action {
+    background-color: #f85050;
+    background-image: url('../images/delivery_guy.png');
+    background-size: contain;
+    background-position: calc(100% - 10%) center;
+    background-repeat: no-repeat;
+    height: 380px;
+    padding: 1% 37% 0% 7%;
+}
+
+    .call-To-Action p {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        font-size: 55px;
+        color: #FFFFFF;
+    }
+       
+        .call-To-Action p span {
+            font-weight: 700;
+            font-size: 65px;
+            color: #FFDE59;
+        }
+
+        .call-To-Action p a {
+            font-weight: 700;
+            font-size: 60px;
+            color: #FFDE59;
+            text-decoration: none;
+        }
+
+.titulo-favoritos {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    color: #616572;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+}
+
+.card-with-title {
+    position: relative;
+    text-align: center;
+    color: #FFFEFE;
+    font-size: 20px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+.card-img-top {
+    flex: 1;
+    object-fit:fill; 
+}
+.title-overlay {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px; 
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0; 
+}
+.footer__main {
+    position: absolute;
+    width: 100%;
+}
+
+.card-2 {
+    display: flex;
+    flex-direction: column;
+    height: 170%;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.title-overlay-2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    background-color: black;
+    color: #f85050;
+    border: 2px solid #f85050;
+}
+
+.card-text-2 {
+    margin: 0;
+    font-size: 28px;
+}
+.titulo-bajo {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    color: #616572;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 190px
+}
+#logout {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.fav-link-custom {
+    text-decoration: none;
+    color: #FFFEFE;
+}
+    .fav-link-custom:hover {
+        text-decoration: none;
+        color: #CCCCCC;
+    }

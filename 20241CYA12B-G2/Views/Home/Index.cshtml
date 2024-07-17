@@ -1,0 +1,146 @@
+﻿@model _20241CYA12B_G2.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="nav-link-custom" asp-controller="Productos" asp-action="Index" asp-route-category="Combos">
+    <div class="hero-custom">
+    
+    @if (Model.mensajeDescuento == "")
+    {
+        
+        <p>Hoy <span>@Model.nombreDia</span> , ahorra un <span>@Model.descuento%</span> en <span>@Model.Producto</span></p>
+        
+    }
+    else
+    {
+        <p> @Model.mensajeDescuento</p>
+    }
+</div>
+</a>
+<div class="container mt-5" style="margin-top: 10px;">
+    <h2 class="titulo-favoritos">
+        Los favoritos
+        <img src="~/images/emoticon_smile.png" alt="Emoji" style="width: 40px; height: 40px;">
+    </h2>
+    <div class="row">
+        <!-- Primera fila -->
+        <div class="col-md-8 mb-4">
+            <div class="card card-with-title">
+                <img src="~/images/fav_tabla.png" class="card-img-top" alt="Combo 100% salmón Alaska XL de 40 piezas">
+                <div class="title-overlay">
+                    <a class="fav-link-custom" asp-controller="Productos" asp-action="Index" asp-route-category="Combos">
+                    <p class="card-text">Combo 100% salmón Alaska XL de 40 piezas</p>
+                    </a>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-4 mb-4">
+            <div class="card card-with-title">
+                <img src="~/images/fav_postre.png" class="card-img-top" alt="Postre helado OREO">
+                <div class="title-overlay">
+                    <a class="fav-link-custom" asp-controller="Productos" asp-action="Index" asp-route-category="Postres">
+                    <p class="card-text">Postre helado OREO</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda fila -->
+        <div class="col-md-4 mb-4">
+            <div class="card card-with-title">
+                <img src="~/images/fav_arrolladitos.png" class="card-img-top" alt="Empanaditas chinas de carne">
+                <div class="title-overlay">
+                    <a class="fav-link-custom" asp-controller="Productos" asp-action="Index" asp-route-category="Entradas">
+                    <p class="card-text">Empanaditas chinas de carne</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mb-4">
+            <div class="card card-with-title">
+                <img src="~/images/fav_tempura.png" class="card-img-top" alt="Langostinos rebozados en panko fritos con salsa de tamarindo">
+                <div class="title-overlay">
+                    <a class="fav-link-custom" asp-controller="Productos" asp-action="Index" asp-route-category="Entradas">
+                    <p class="card-text">Langostinos rebozados en panko fritos con salsa de tamarindo</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- xxxxxxxxxxxxxxxxxx -->
+
+<div class="call-To-Action">
+    <p>
+        Hoy <span>@Model.nombreDia</span> @Model.mensajeAtencion
+        <a href="https://web.whatsapp.com">+541140044004</a>
+        
+    </p>
+</div>
+
+<div class="container mt-5" style="margin-top: 10px;">
+    <h2 class="titulo-favoritos">
+        Nuestros Locales
+    </h2>
+    <div class="row">
+        <!-- fila -->
+        <div class="col-md-3 mb-2">
+            <div class="card-2 card-with-title-2">
+                <a href="@Url.Action("Index", "Reservas")">
+
+               
+
+                <img src="~/images/local_palermo.png" class="card-img-top" alt="Palermo">
+                
+                <div class="title-overlay-2">
+                    <p class="card-text-2">Palermo</p>
+                    <p>Alto Palermo local 1</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card-2 card-with-title-2">
+                <a href="@Url.Action("Index", "Reservas")">
+                <img src="~/images/local_recoleta.png" class="card-img-top" alt="Palermo">
+                
+                <div class="title-overlay-2">
+                    <p class="card-text-2">Recoleta</p>
+                    <p>Callao 986</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card-2 card-with-title-2">
+                <a href="@Url.Action("Index", "Reservas")">
+                    <img src="~/images/local_belgrano.png" class="card-img-top" alt="Palermo">
+                
+                    <div class="title-overlay-2">
+                        <p class="card-text-2">Belgrano</p>
+                        <p>Av. Monroe 2401</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            
+            <div class="card-2 card-with-title-2">
+                <a href="@Url.Action("Index", "Reservas")">
+                    <img src="~/images/local_caballito.png" class="card-img-top" alt="Palermo">
+                
+                <div class="title-overlay-2">
+                    <p class="card-text-2">Caballito</p>
+                    <p>Av. Acoyte 234</p>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+    <p class="titulo-bajo"> Lunes a Viernes de 11 a 15 hs. y de 18 a 23:30 hs. Sabado y Domingo de 17 a 0 hs.</p>
+</div>
+

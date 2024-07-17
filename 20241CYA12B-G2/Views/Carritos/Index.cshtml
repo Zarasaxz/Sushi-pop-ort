@@ -1,0 +1,47 @@
+﻿@model _20241CYA12B_G2.Models.Carrito
+
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<h1>Carrito</h1>
+
+<p>
+    <a asp-action="Create">Crear Carrito</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Producto
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CarritoItems) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitarioConDescuento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+                <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-controller="Pedidos" asp-action="HacerPedido" asp-route-idCarrito="@Model.Id"> Hacer pedido </a>

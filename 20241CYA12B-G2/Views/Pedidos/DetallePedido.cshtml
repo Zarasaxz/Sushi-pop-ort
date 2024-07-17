@@ -1,0 +1,18 @@
+﻿@model _20241CYA12B_G2.Models.DetallePedidoViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@Model.identificadorCarrito
+@Model.SubTotal
+
+@foreach(var producto in Model.Productos)
+{
+    <p>@producto</p>
+}
+
+
+<a asp-controller="Pedidos" asp-action="ConfirmarPedido" asp-route-a="@Model.identificadorCarrito"> Confirmar pedido </a>

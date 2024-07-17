@@ -1,0 +1,67 @@
+﻿@model IEnumerable<_20241CYA12B_G2.Models.Reclamo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (User.IsInRole("CLIENTE"))
+{   <h1>"Reclamo Creado con Exito</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+@if (User.IsInRole("EMPLEADO"))
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetalleReclamo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pedido)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetalleReclamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pedido.Id)
+            </td>
+
+             <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+                
+        </tr>
+}
+    </tbody>
+    
+</table>
+}

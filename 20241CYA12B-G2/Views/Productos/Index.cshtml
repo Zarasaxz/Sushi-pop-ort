@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_20241CYA12B_G2.Models.Producto>
+
+@{
+    ViewData["Title"] = "Listado Productos";
+}
+
+<h1>Listado Productos</h1>
+@if (User.IsInRole("EMPLEADO"))
+{
+    <p>
+    <a asp-action="Create">Crear Producto</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+            <th>@Html.DisplayNameFor(model => model.Precio)</th>
+            <th>@Html.DisplayNameFor(model => model.Foto)</th>
+            <th>@Html.DisplayNameFor(model => model.Stock)</th>
+            <th>@Html.DisplayNameFor(model => model.Costo)</th>
+            <th>@Html.DisplayNameFor(model => model.Categoria.Id)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+                <td>@Html.DisplayFor(modelItem => item.Foto)</td>
+                <td>
+                    @if (item.Stock == 0)
+                    {
+                        <span>Sin stock</span>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Costo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Categoria.Id)</td>
+                <td>
+                    @if (User.IsInRole("EMPLEADO"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    }
+                    @if (User.IsInRole("EMPLEADO"))
+                    {
+                        <a asp-action="Delate" asp-route-id="@item.Id">Delate</a>
+                    }
+
+                    @if (User.IsInRole("CLIENTE"))
+                    {
+                        <a asp-controller="Carritos" asp-action="AgregarEditarProducto" asp-route-productoId="@item.Id">Agregar al Carrito</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

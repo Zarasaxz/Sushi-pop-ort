@@ -1,1 +1,1 @@
-# 20241CYA12B-G2-main
+Proyecto creado con C#, frontend, database en memoria para Ort Argentina.
